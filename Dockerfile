@@ -1,3 +1,4 @@
+# Container image that runs your code
 FROM alpine:3.10
 
 #Install necessary packages #Installing curl for making calls to REST API and jq for passing json and extracting url of images
@@ -10,5 +11,9 @@ COPY entrypoint.sh /entrypoint.sh
 #Make script executable
 RUN chmod +x /entrypoint.sh
 
+RUN cat /entrypoint.sh
+
 #Code file execute when docker container start
 ENTRYPOINT ["/entrypoint.sh"]
+
+
